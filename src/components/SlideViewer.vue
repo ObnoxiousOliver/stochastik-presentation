@@ -43,17 +43,9 @@
 <script>
 import { computed, onMounted, ref } from '@vue/runtime-core'
 
-// import StartSlide from '../slides/00 - StartSlide.vue'
-// import TitleSlide from '../slides/01 - TitleSlide.vue'
-// import HistorySlide from '../slides/02 - HistorySlide.vue'
-// import UsageSlide from '../slides/03 - UsageSlide.vue'
-// import WhatCurrentSlide from '../slides/04 - WhatCurrentSlide.vue'
-// import GenConstructionSlide from '../slides/05 - GenConstructionSlide.vue'
-// import GenInsideSimpleSlide from '../slides/06 - GenInsideSimpleSlide.vue'
-// import GenSimpleAloneSlide from '../slides/07 - GenSimpleAloneSlide.vue'
-// import TurbineOpenSlide from '../slides/08 - TurbineOpenSlide.vue'
-// import TubineCloseupSlide from '../slides/09 - TubineCloseupSlide.vue'
-// import EndSlide from '../slides/10 - EndSlide.vue'
+import StartSlide from '../slides/00 - StartSlide.vue'
+import TitleSlide from '../slides/01 - Title.vue'
+import FactorialSlide from '../slides/02 - Factorial.vue'
 
 export default {
   props: {
@@ -63,17 +55,9 @@ export default {
 
   setup (props) {
     const slides = [
-      // { r: [0], c: StartSlide },
-      // { r: [1], c: TitleSlide },
-      // { r: [2, 3], c: HistorySlide },
-      // { r: [4, 5, 6, 7, 8], c: UsageSlide },
-      // { r: [9, 10, 11], c: WhatCurrentSlide },
-      // { r: [12], c: GenConstructionSlide },
-      // { r: [13], c: GenInsideSimpleSlide },
-      // { r: [14, 15, 16, 17, 18], c: GenSimpleAloneSlide },
-      // { r: [19, 20], c: TurbineOpenSlide },
-      // { r: [21, 22], c: TubineCloseupSlide },
-      // { r: [23], c: EndSlide }
+      { r: [0], c: StartSlide },
+      { r: [1], c: TitleSlide },
+      { r: [2], c: FactorialSlide }
     ]
 
     const slideEl = computed(() => slides.find(x => x.r.includes(props.slide)))
