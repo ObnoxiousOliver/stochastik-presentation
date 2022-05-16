@@ -42,10 +42,6 @@
   position: absolute;
 }
 
-.math {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
 .fact1, .fact2 {
   top: 50%;
   left: 50%;

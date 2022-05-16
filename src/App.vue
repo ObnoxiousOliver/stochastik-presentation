@@ -1,6 +1,7 @@
 <template>
   <div style="position: fixed; opacity: 0;">
-    <img class="tree" src="Tree.svg">
+    <img src="Tree.svg">
+    <img src="Tree2.svg">
   </div>
   <SlideViewer
     v-if="allAssetsLoaded"
@@ -8,6 +9,7 @@
     :maxSlide="maxSlide"
     @slide:next="slide++"
     @slide:prev="slide--"
+    @slide:to="(e: number) => { slide = e }"
   />
   <div class="loading" v-else>Loading...</div>
 </template>
@@ -25,7 +27,7 @@ export default {
 
   setup () {
     const slide = ref(0)
-    const maxSlide = 23
+    const maxSlide = 100
     const allAssetsLoaded = ref(false)
 
     watch(slide, () => {
@@ -78,6 +80,27 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.root {
+  background: white;
+  position: relative;
+}
+
+.math {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center;
+}
+
+.frac {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  text-align: center;
+
+  span:not(:last-child) {
+    border-bottom: #000 solid .1em;
+  }
 }
 
 :root {

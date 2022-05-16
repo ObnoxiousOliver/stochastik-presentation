@@ -18,6 +18,7 @@
         v-if="slideEl"
         :is="slideEl?.c"
         @slide:next="$emit('slide:next')"
+        @slide:to="e => $emit('slide:to', e)"
         :state="slideEl.r.indexOf(slide)"
       />
     </transition>
@@ -44,11 +45,13 @@
 import { computed, onMounted, ref } from '@vue/runtime-core'
 
 import StartSlide from '../slides/00 - StartSlide.vue'
+import SectionTitle from '../slides/SectionTitle.vue'
 import TitleSlide from '../slides/01 - Title.vue'
-import FactorialSlide from '../slides/02 - Factorial.vue'
-import FactorialExamplesSlide from '../slides/03 - FactorialExamples.vue'
-import NfactdivkfactSlide from '../slides/04 - nfactdivkfact.vue'
+import SelectionSlide from '../slides/02 - Selection.vue'
+import FactorialSlide from '../slides/03 - Factorial.vue'
+import FactorialExamplesSlide from '../slides/04 - FactorialExamples.vue'
 import Vid02ExampleSlide from '../slides/05 - Vid02Example.vue'
+import Vid03Slide from '../slides/06 - Vid03.vue'
 
 export default {
   props: {
@@ -59,11 +62,13 @@ export default {
   setup (props) {
     const slides = [
       { r: [0], c: StartSlide },
+      { r: [3, 17, 24, 28], c: SectionTitle },
       { r: [1], c: TitleSlide },
-      { r: Array(9).fill(0).map((_, i) => i + 2), c: FactorialSlide },
-      { r: Array(2).fill(0).map((_, i) => i + 11), c: FactorialExamplesSlide },
-      { r: Array(5).fill(0).map((_, i) => i + 13), c: NfactdivkfactSlide },
-      { r: [18], c: Vid02ExampleSlide }
+      { r: [2], c: SelectionSlide },
+      { r: Array(9).fill(0).map((_, i) => i + 4), c: FactorialSlide },
+      { r: Array(5).fill(0).map((_, i) => i + 13), c: FactorialExamplesSlide },
+      { r: Array(6).fill(0).map((_, i) => i + 18), c: Vid02ExampleSlide },
+      { r: Array(2).fill(0).map((_, i) => i + 25), c: Vid03Slide }
     ]
 
     const slideEl = computed(() => slides.find(x => x.r.includes(props.slide)))
