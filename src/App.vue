@@ -1,5 +1,6 @@
 <template>
   <div style="position: fixed; opacity: 0;">
+    <img class="tree" src="Tree.svg">
   </div>
   <SlideViewer
     v-if="allAssetsLoaded"
@@ -11,7 +12,7 @@
   <div class="loading" v-else>Loading...</div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from '@vue/reactivity'
 import SlideViewer from './components/SlideViewer.vue'
 import { onMounted, watch } from '@vue/runtime-core'
@@ -29,13 +30,13 @@ export default {
 
     watch(slide, () => {
       slide.value = Math.max(0, Math.min(slide.value, maxSlide))
-      localStorage.setItem('slide', slide.value)
+      localStorage.setItem('slide', slide.value + '')
     })
 
     onMounted(() => {
       const totalImg = document.querySelectorAll('img').length
 
-      slide.value = localStorage.getItem('slide') ?? 0
+      slide.value = +(localStorage.getItem('slide') ?? 0)
 
       let loadedImg = 0
 

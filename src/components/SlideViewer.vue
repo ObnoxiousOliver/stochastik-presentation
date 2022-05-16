@@ -46,6 +46,7 @@ import { computed, onMounted, ref } from '@vue/runtime-core'
 import StartSlide from '../slides/00 - StartSlide.vue'
 import TitleSlide from '../slides/01 - Title.vue'
 import FactorialSlide from '../slides/02 - Factorial.vue'
+import FactorialExamplesSlide from '../slides/03 - FactorialExamples.vue'
 
 export default {
   props: {
@@ -57,7 +58,8 @@ export default {
     const slides = [
       { r: [0], c: StartSlide },
       { r: [1], c: TitleSlide },
-      { r: [2], c: FactorialSlide }
+      { r: Array(9).fill(0).map((_, i) => i + 2), c: FactorialSlide },
+      { r: Array(2).fill(0).map((_, i) => i + 11), c: FactorialExamplesSlide }
     ]
 
     const slideEl = computed(() => slides.find(x => x.r.includes(props.slide)))

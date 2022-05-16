@@ -70,7 +70,7 @@ h3 {
 
   &-leave-active {
     z-index: 1;
-    transition: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: .5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   }
   &-leave-to {
     transform: translateY(-100%);
