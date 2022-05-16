@@ -22,7 +22,7 @@
         Wie viele verschiedene Möglichkeiten gibt es ein Kartendeck mit <b>52 Karten</b> zu mischen?
       </p>
 
-      <div class="res math">52! = 8.0658175 × 10<sup>67</sup></div>
+      <div class="res math">52! = 8,065817517094388 × 10<sup>67</sup></div>
     </div>
   </div>
 </template>

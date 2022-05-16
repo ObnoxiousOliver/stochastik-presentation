@@ -2,7 +2,7 @@
   <div class="root">
     <div>
       <h3>Alex | Julia | Sema | Oliver</h3>
-      <h1>Fakultät</h1>
+      <h1>Fakultät!</h1>
       <h2>Stochastik</h2>
     </div>
   </div>

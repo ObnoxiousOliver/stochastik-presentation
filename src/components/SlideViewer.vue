@@ -47,6 +47,8 @@ import StartSlide from '../slides/00 - StartSlide.vue'
 import TitleSlide from '../slides/01 - Title.vue'
 import FactorialSlide from '../slides/02 - Factorial.vue'
 import FactorialExamplesSlide from '../slides/03 - FactorialExamples.vue'
+import NfactdivkfactSlide from '../slides/04 - nfactdivkfact.vue'
+import Vid02ExampleSlide from '../slides/05 - Vid02Example.vue'
 
 export default {
   props: {
@@ -59,7 +61,9 @@ export default {
       { r: [0], c: StartSlide },
       { r: [1], c: TitleSlide },
       { r: Array(9).fill(0).map((_, i) => i + 2), c: FactorialSlide },
-      { r: Array(2).fill(0).map((_, i) => i + 11), c: FactorialExamplesSlide }
+      { r: Array(2).fill(0).map((_, i) => i + 11), c: FactorialExamplesSlide },
+      { r: Array(5).fill(0).map((_, i) => i + 13), c: NfactdivkfactSlide },
+      { r: [18], c: Vid02ExampleSlide }
     ]
 
     const slideEl = computed(() => slides.find(x => x.r.includes(props.slide)))
